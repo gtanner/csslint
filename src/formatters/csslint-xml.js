@@ -19,7 +19,7 @@ CSSLint.addFormatter({
         return "</csslint>";
     },
     
-    formatResults: function(results, filename) {
+    formatResults: function(results, filename, options) {
         var messages = results.messages,
             output = [];
 

@@ -11,14 +11,14 @@ CSSLint.addFormatter({
         return "";
     },
 
-    formatResults: function(results, filename) {
+    formatResults: function(results, filename, options) {
         var messages = results.messages,
             output = "",
             pos = filename.lastIndexOf("/"),
             shortFilename = filename;
 
         if (messages.length === 0) {
-            return shortFilename + ": Lint Free!";
+            return options.quiet ? "" : shortFilename + ": Lint Free!";
         }
 
         if (pos == -1){

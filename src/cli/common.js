@@ -68,7 +68,7 @@ function cli(api){
             api.print("csslint: Could not read file data in " + filename + ". Is the file empty?");
             exitCode = 1;
         } else {
-            api.print(CSSLint.getFormatter(formatId).formatResults(result, filename, formatId));
+            api.print(CSSLint.getFormatter(formatId).formatResults(result, filename, options));
 
             if (messages.length > 0 && pluckByType(messages, "error").length > 0) {
                 exitCode = 1;

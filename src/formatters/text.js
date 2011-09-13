@@ -11,10 +11,10 @@ CSSLint.addFormatter({
         return "";
     },
 
-    formatResults: function(results, filename) {
+    formatResults: function(results, filename, options) {
         var messages = results.messages;
         if (messages.length === 0) {
-            return "\n\ncsslint: No errors in " + filename + ".";
+            return options.quiet ? "" : "\n\ncsslint: No errors in " + filename + ".";
         }
         
         output = "\n\ncsslint: There are " + messages.length  +  " problems in " + filename + ".";

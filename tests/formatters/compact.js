@@ -11,6 +11,11 @@
             Assert.areEqual("FILE: Lint Free!", CSSLint.format(result, "FILE", "compact"));
         },
 
+        "File with no problems should not say so if quiet": function(){
+            var result = { messages: [], stats: [] };
+            Assert.areEqual("", CSSLint.format(result, "FILE", "compact", {quiet: true}));
+        },
+
         "File with problems should list them": function(){
             var result = { messages: [ 
                      { type: 'warning', line: 1, col: 1, message: 'BOGUS WARNING', evidence: 'BOGUS', rule: [] },

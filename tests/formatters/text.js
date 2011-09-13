@@ -12,6 +12,11 @@
             Assert.areEqual("\n\ncsslint: No errors in FILE.", CSSLint.format(result, "FILE", "text"));
         },
 
+        "File with no problems shouldn't say so if quiet": function (){
+            var result = { messages: [], stats: [] };
+            Assert.areEqual("", CSSLint.format(result, "FILE", "text", {quiet: true}));
+        },
+
         "File with problems should list them": function(){
             var result = { messages: [ 
                      { type: 'warning', line: 1, col: 1, message: 'BOGUS', evidence: 'ALSO BOGUS', rule: [] },

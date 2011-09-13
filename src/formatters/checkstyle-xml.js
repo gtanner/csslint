@@ -11,7 +11,7 @@ CSSLint.addFormatter({
         return "</checkstyle>";
     },
 
-    formatResults: function(results, filename) {
+    formatResults: function(results, filename, options) {
         var messages = results.messages,
             output = [];
 
